@@ -97,7 +97,6 @@
 .service {
     width: 100%;
     aspect-ratio: 1/.4;
-    /* border: 2px red solid; */
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -263,7 +262,6 @@
 #category--next {
     position: absolute;
     bottom: 50%;
-    /* background-color: rgba(210, 203, 203, 0.533); */
     border: none;
     font-weight: 500;
     width: 42px;
@@ -303,11 +301,11 @@
 .category {
     display: flex;
     justify-content: center;
-    /* border: 2px red solid; */
 }
 
 .category__img {
-    width: 300px;
+    width: 200px;
+    height: 100px;
 }
 
 .category__description {
@@ -546,13 +544,17 @@
 }
 
 .gallery__item::after {
+    display: grid;
+    place-items: center;
     opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    content: '';
+    content: attr(data-name);
+    color: var(--white);
+    font-weight: 400;
     background-color: rgba(31, 20, 152, 0.59);
     transition: .3s;
 }
