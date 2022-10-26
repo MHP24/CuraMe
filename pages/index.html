@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css/utils/glider.min.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
@@ -235,7 +236,8 @@
                 <div class="centers__content">
                     <div class="centers__header">
                         <p class="centers__title">Nuestras sucursales</p>
-                        <p class="centers__subtitle">Te esperamos con la <span class="centers__content--highlight">mejor atenci&oacute;n</span></p>
+                        <p class="centers__subtitle">Te esperamos con la <span class="centers__content--highlight">mejor
+                                atenci&oacute;n</span></p>
                     </div>
                     <div class="centers__main">
                         <p class="centers__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
@@ -287,19 +289,121 @@
         <section class="gallery">
             <h2 class="gallery__title">Siempre a <span class="gallery__title--highlight">tu alcance</span></h2>
             <div class="gallery__grid">
-                <div class="gallery__item gallery__item--tall" style="background-image: url('/assets//imgs/h8.jpg')" data-name="Galenos1"></div>
-                <div class="gallery__item" style="background-image: url('/assets//imgs/h2.jpg')" data-name="Galenos2"></div>
-                <div class="gallery__item" style="background-image: url('/assets//imgs/h3.jpg')" data-name="Galenos3"></div>
-                <div class="gallery__item gallery__item--wide" style="background-image: url('/assets//imgs/h4.jpg')" data-name="Galenos4"></div>
-                <div class="gallery__item" style="background-image: url('/assets//imgs/h5.jpg')" data-name="Galenos5"></div>
-                <div class="gallery__item gallery__item--wide" style="background-image: url('/assets//imgs/h6.jpg')" data-name="Galenos6"></div>
-                <div class="gallery__item" style="background-image: url('/assets//imgs/h7.jpg')" data-name="Galenos7"></div>
+                <div class="gallery__item gallery__item--tall" style="background-image: url('/assets//imgs/h8.jpg')"
+                    data-name="Galenos1"></div>
+                <div class="gallery__item" style="background-image: url('/assets//imgs/h2.jpg')" data-name="Galenos2">
+                </div>
+                <div class="gallery__item" style="background-image: url('/assets//imgs/h3.jpg')" data-name="Galenos3">
+                </div>
+                <div class="gallery__item gallery__item--wide" style="background-image: url('/assets//imgs/h4.jpg')"
+                    data-name="Galenos4"></div>
+                <div class="gallery__item" style="background-image: url('/assets//imgs/h5.jpg')" data-name="Galenos5">
+                </div>
+                <div class="gallery__item gallery__item--wide" style="background-image: url('/assets//imgs/h6.jpg')"
+                    data-name="Galenos6"></div>
+                <div class="gallery__item" style="background-image: url('/assets//imgs/h7.jpg')" data-name="Galenos7">
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="faq__container">
+                <div class="faq__img-container">
+                    <img src="/assets//imgs//faq.png" alt="" class="faq__img">
+                </div>
+
+                <div class="faq__content">
+                    <p class="faq__title">Preguntas <span class="faq__title--s">frecuentes</span></p>
+                    <div class="faq__list">
+                        <div class="faq__item">
+                            <div class="faq__collapsable">
+                                <p class="faq__question">¿Lorem, ipsum dolor?</p>
+                            </div>
+
+                            <div class="faq__answer">
+                                <p class="faq__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+                                    incidunt recusandae exercitationem molestias ducimus sit eos ea modi libero
+                                    deleniti.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq__item">
+                            <div class="faq__collapsable">
+                                <p class="faq__question">¿Lorem, ipsum dolor?</p>
+                            </div>
+
+                            <div class="faq__answer">
+                                <p class="faq__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+                                    incidunt recusandae exercitationem molestias ducimus sit eos ea modi libero
+                                    deleniti.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq__item">
+                            <div class="faq__collapsable">
+                                <p class="faq__question">¿Lorem, ipsum dolor?</p>
+                            </div>
+
+                            <div class="faq__answer">
+                                <p class="faq__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+                                    incidunt recusandae exercitationem molestias ducimus sit eos ea modi libero
+                                    deleniti.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="contact__container">
+                <div class="contact__form-container">
+                    <div class="contact__form__titles">
+                        <p class="contact__title">No dudes en consultar, <span class="contact__title--h">est&aacute;mos
+                                para responder</span></p>
+                        <p class="contact__subtitle">Para garantizar una buena atenci&oacute;n las inquetudes no deben
+                            ser
+                            un impedimento</p>
+                    </div>
+                    <form action="" class="contact__form">
+                        <input name="username" id="username" type="text" class="contact__input" placeholder="Tu nombre"
+                            autocomplete="off" autocapitalize="on">
+                        <div class="form__group">
+                            <input name="phone" id="phone" type="text" class="contact__input"
+                                placeholder="Número télefonico" autocomplete="off">
+                            <input name="email" id="email" type="email" class="contact__input"
+                                placeholder="Correo electrónico" autocomplete="off">
+                        </div>
+                        <textarea name="message" id="message" placeholder="Mensaje"
+                            class="contact__input contact__input--area"></textarea>
+
+                        <button class="btn--g">Enviar</button>
+                    </form>
+                </div>
+
+                <div class="contact__img-container">
+                    <img src="/assets/imgs/contact.png" alt="contact us" class="contact__img">
+                </div>
             </div>
         </section>
     </main>
 
+    <footer class="footer">
+        <div class="footer__container">
+            <section class="footer__section">
+                <h1 class="footer__logo"><span class="footer__logo--draw">+</span> CuraMe</h1>
+            </section>
+            <div class="footer__line"></div>
+            <p class="footer__group">Copyright &copy; 2022 Grupo 5 - AO_ASY4131_23824833_PCT</p>
+        </div>
+
+    </footer>
     <script src="/js/libraries/glider.min.js"></script>
     <script src="/js/sliders/categories.js"></script>
+    <script src="/js/collapsable.js"></script>
 </body>
 
 </html>

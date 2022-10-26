@@ -2,12 +2,18 @@
     --white: #ffffff;
     --white-primary: #fafafa;
     --gray-primary: #ededed;
+    --gray-secondary: #F6F7F5;
     --black-primary: #121212;
+    --black-secondary: #1c1c1c;
     --cyan-primary: #0899ba;
+    --blue-primary: #1d4e89;
+    --blue-secondary: #3368C6;
 }
 
 .nav {
-    position: fixed;
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
     /* border: 2px red solid; */
     display: flex;
@@ -40,7 +46,7 @@
 .nav__logo--draw {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: #3368C6;
+    color: var(--blue-secondary);
 }
 
 .nav__list {

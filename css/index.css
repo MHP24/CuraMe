@@ -9,7 +9,6 @@
     --blue-secondary: #3368C6;
 }
 
-
 .main {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
@@ -200,6 +199,8 @@
     padding: 1em;
     font-weight: 600;
     text-decoration: none;
+    border: none;
+    outline: none;
     border-radius: 2%;
     transition: .5s;
     width: 150px;
@@ -560,7 +561,7 @@
 }
 
 
-.gallery__item:hover::after{
+.gallery__item:hover::after {
     opacity: 1;
     transition: .3s;
 }
@@ -573,4 +574,216 @@
     .gallery__item--tall {
         grid-row: span 2;
     }
+}
+
+/* FAQ */
+
+.faq {
+    width: 100%;
+    /* border: 2px red solid; */
+    padding: 2em 0;
+}
+
+.faq__container {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    place-content: center;
+    gap: 2em;
+    /* border: 2px blue solid; */
+}
+
+.faq__img-container {
+    display: grid;
+    place-items: center;
+}
+
+.faq__img {
+    width: 300px;
+    height: auto;    
+}
+
+.faq__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+}
+
+.faq__item {
+    border-radius: 2%;
+}
+
+.faq__collapsable{
+    padding: 1.3em;
+    transition: .3s;
+}
+
+.faq__answer {
+    padding: 0 1.3em;
+    box-shadow: 1px -1px 5px -21px rgba(0,0,0,0.75);
+}
+
+.faq__paragraph {
+    height: 0px;
+    margin-top: 1em;
+    overflow: hidden;
+    transition: .3s;
+    text-align: justify;
+}
+
+.faq__collapsable {
+    background-color: var(--gray-primary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--blue-secondary);
+}
+
+.faq__paragraph--open {
+    height: 100px;
+    transform: translateY(0);
+}
+
+.faq__collapsable--open {
+    background-color: var(--blue-secondary);
+    color: var(--white-primary);
+    transition: .3s;
+}
+
+.faq__title {
+    margin-bottom: 1em;
+    font-size: 1.8rem;
+    color: var(--black-primary);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.faq__title--s {
+    color: var(--blue-secondary);
+}
+
+@media (max-width: 958px) {
+    .faq__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 375px ) {
+    .faq__paragraph--open {
+        height: 150px;
+    }
+}
+
+/* Contact us */
+.contact {
+    width: 100%;
+}
+
+.contact__container {
+    text-align: center;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    justify-content: center;
+    /* border: 2px blue solid; */
+    background-color: var(--gray-primary);
+    margin: auto;
+    padding: 1.5em 1.5em 0;
+}
+
+.contact__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--black-primary);
+}
+
+.contact__title--h {
+    color: var(--blue-secondary);
+}
+
+.contact__subtitle {
+    line-height: 1.5;
+}
+
+.contact__form-container {
+    /* border: 2px red solid; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(/assets/imgs/abstract-bg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+@media (max-width: 980px) {
+    .contact__container {
+        width: 100%;
+    }
+
+    .contact__form__titles {
+        margin-bottom: 1em;
+    }
+}
+
+@media (max-width: 836px) {
+    .contact__container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__form-container {
+        grid-row: 2/3;
+    }
+}
+
+@media (max-width: 460px) {
+    .form__group {
+        flex-direction: column;
+    }
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3em;
+}
+
+.contact__input {
+    width: 100%;
+    padding: .7em;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background-color: var(--white-primary);
+    font-weight: 300;
+}
+
+.contact__input:focus {
+    outline: none;
+}
+
+.contact__input::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.contact__input--area {
+    resize: none;
+}
+
+.form__group {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.contact__img {
+    width: 330px;
+    height: auto;
 }
