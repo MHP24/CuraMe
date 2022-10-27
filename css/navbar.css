@@ -11,7 +11,8 @@
 }
 
 .nav {
-    position: sticky;
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -26,12 +27,15 @@
 }
 
 .nav__container {
+    position: relative;
     width: 85%;
     display: grid;
     grid-template-columns: 150px 1fr;
     justify-content: center;
     padding: 0 1em;
     gap: 1em;
+    /* border: 2px red solid; */
+    background: var(--white);
     /* border: 2px red solid; */
 }
 
@@ -44,7 +48,6 @@
 }
 
 .nav__logo--draw {
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: var(--blue-secondary);
 }
@@ -80,3 +83,55 @@
 .nav__link--active {
     font-weight: 400;
 }
+
+#nav__menu {
+    display: none;
+}
+
+@media (max-width: 920px) {
+    .nav__container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 780px) {
+    #nav__menu {
+        display: block;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+    
+    #menu__img {
+        width: 40px;
+        height: 40px;
+    }
+
+    
+    .nav__container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+        /* border: 2px red solid; */
+        height: 0px;
+        overflow: hidden;
+        transition: .3s;
+
+    }
+
+    .nav__item--msc {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav__list--open {
+        height: 250px;
+        transition: .3s;
+    }
+}
+
