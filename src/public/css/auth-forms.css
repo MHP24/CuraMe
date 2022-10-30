@@ -1,0 +1,115 @@
+:root {
+    --white: #ffffff;
+    --white-primary: #fafafa;
+    --gray-primary: #ededed;
+    --gray-secondary: #F6F7F5;
+    --black-primary: #121212;
+    --cyan-primary: #0899ba;
+    --blue-primary: #1d4e89;
+    --blue-secondary: #3368C6;
+}
+
+.main {
+    margin-top: 4.5em;
+    min-height: 100vh;
+    width: 100%;
+    /* border: 1px red solid; */
+    background-color: var(--blue-primary);
+    display: grid;
+    place-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    width: 100%;
+    background-color: var(--white);
+    min-height: 100%;
+    border-radius: .5%;
+    overflow: hidden;
+}
+
+.form-picture {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form-sub-container {
+    /* border: 1px blue solid; */
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    animation: downToUp 1s ease-in-out;
+}
+
+@keyframes downToUp {
+    from {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titles {
+    color: var(--black-primary);
+    /* border: 1px red solid; */
+}
+
+.title {
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    margin-top: .5em;
+    font-weight: 300;
+}
+
+.form {
+    /* border: 1px red solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+@media (max-width: 1000px) {
+    .form-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 840px) {
+    .form-picture {
+        display: none;
+    }
+
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 440px) {
+    .form__group {
+        flex-direction: column;
+    }
+
+    .form-sub-container {
+        padding: 2em;
+    }
+}

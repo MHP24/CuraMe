@@ -16,6 +16,7 @@
     <!--  -->
     <link rel="stylesheet" href="/css/utils/normalize.css">
     <link rel="stylesheet" href="/css/utils/glider.min.css">
+    <link rel="stylesheet" href="/css/utils/global-utils.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -72,6 +73,36 @@
                 </div>
 
                 <div class="hero__shadow"></div>
+            </div>
+            <div class="hero__attention">
+                <p class="attention__title">Agenda tu hora</p>
+                <form action="" class="attention form">
+                    <select name="spots" id="spots" class="attention__select">
+                        <option value="option" class="attention__option" selected disabled>Sucursal</option>
+                        <option value="spot-1" class="attention__option">Sucursal-1</option>
+                        <option value="spot-2" class="attention__option">Sucursal-2</option>
+                        <option value="spot-3" class="attention__option">Sucursal-3</option>
+                        <option value="spot-4" class="attention__option">Sucursal-4</option>
+                    </select>
+
+                    <select name="skills" id="skills" class="attention__select">
+                        <option value="option" class="attention__option" selected disabled>Especialidad</option>
+                        <option value="skill-1" class="attention__option">Especialidad-1</option>
+                        <option value="skill-2" class="attention__option">Especialidad-2</option>
+                        <option value="skill-3" class="attention__option">Especialidad-3</option>
+                        <option value="skill-4" class="attention__option">Especialidad-4</option>
+                    </select>
+
+                    <select name="dates" id="dates" class="attention__select">
+                        <option value="option" class="attention__option" selected disabled>Fecha</option>
+                        <option value="date-1" class="attention__option">Fecha-1</option>
+                        <option value="date-2" class="attention__option">Fecha-2</option>
+                        <option value="date-3" class="attention__option">Fecha-3</option>
+                        <option value="date-4" class="attention__option">Fecha-4</option>
+                    </select>
+
+                    <button class="btn--g attention--btn">Agendar</button>
+                </form>
             </div>
         </section>
 
@@ -415,7 +446,6 @@
             <div class="footer__line"></div>
             <p class="footer__group">Copyright &copy; 2022 Grupo 5 - AO_ASY4131_23824833_PCT</p>
         </div>
-
     </footer>
     <script src="/js/navigation.js"></script>
     <script src="/js/libraries/glider.min.js"></script>

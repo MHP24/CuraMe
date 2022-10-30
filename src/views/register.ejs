@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <!-- Fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--  -->
+    <!-- Poppins 200-300-500-600 Courgette 400-->
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@200;300;500;600&display=swap"
+        rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="/css/utils/normalize.css">
+    <link rel="stylesheet" href="/css/utils/global-utils.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/utils/forms-utils.css">
+    <link rel="stylesheet" href="/css/auth-forms.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <h1 class="nav__logo"><span class="nav__logo--draw">+</span> CuraMe</h1>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#" class="nav__link nav__link--active">Inicio</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Nosotros</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Sucursales</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Ayuda</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Contacto</a>
+                </li>
+
+                <li class="nav__item nav__item--msc">
+                    <button class="btn--g nav__btn">Iniciar Sesi&oacute;n</button>
+                </li>
+            </ul>
+
+            <div id="nav__menu">
+                <img src="/assets/icons/menu.svg" alt="Menu" id="menu__img">
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="form-container">
+            <div class="form-picture" style="background-image: url(/assets/imgs/register-picture.jpg);"></div>
+            <div class="form-sub-container">
+                <div class="titles">
+                    <p class="title">¡Bienvenido!</p>
+                    <p class="subtitle">Registrate para continuar</p>
+                </div>
+                <form action="" class="form">
+                    <input type="text" placeholder="Rut" name="rut" id="rut" class="form__input" autocomplete="off">
+                    <div class="form__group">
+                        <input type="text" placeholder="Nombre" name="name" id="name" class="form__input"
+                            autocomplete="off">
+                        <input type="text" placeholder="Apellido" name="lastname" id="lastname" class="form__input"
+                            autocomplete="off">
+                    </div>
+                    <input type="text" placeholder="Télefono" name="phone" id="phone" class="form__input"
+                        autocomplete="off">
+                    <input type="text" placeholder="Dirección" name="address" id="address" class="form__input"
+                        autocomplete="off">
+                    <div class="form__group">
+                        <input type="email" placeholder="Email" name="mail" id="mail" class="form__input"
+                            autocomplete="off">
+                        <input type="password" placeholder="Contraseña" name="password" id="password"
+                            class="form__input" autocomplete="off">
+                    </div>
+                    <button type="submit" class="form__btn">Registrarse</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <section class="footer__section">
+                <h1 class="footer__logo"><span class="footer__logo--draw">+</span> CuraMe</h1>
+            </section>
+            <div class="footer__line"></div>
+            <p class="footer__group">Copyright &copy; 2022 Grupo 5 - AO_ASY4131_23824833_PCT</p>
+        </div>
+    </footer>
+    <script src="/js/navigation.js"></script>
+</body>
+
+</html>
