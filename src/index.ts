@@ -1,17 +1,19 @@
 import express from 'express';
-import { router } from './routes/router';
 import dotenv from 'dotenv';
+import { router } from './routes/router';
+
 const app = express();
 const PORT = 3000;
 /* Front config */
-app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
 /* Data processing config */
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-dotenv.config({ path: './env/.env' });
+
+dotenv.config();
 
 /* Router configs */
 app.use('/', router);
