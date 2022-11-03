@@ -335,7 +335,24 @@
     font-weight: 600;
 }
 
+.btn--g {
+    text-align: center;
+    background-color: var(--blue-secondary);
+    color: var(--white);
+    padding: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 2%;
+    transition: .5s;
+    width: 150px;
+}
 
+.btn--g:hover {
+    background-color: var(--blue-primary);
+    transition: .5s;
+}
 
 @media (max-width: 1095px) {
     .about__container {

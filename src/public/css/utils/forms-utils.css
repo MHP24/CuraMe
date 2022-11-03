@@ -43,3 +43,28 @@
     background-color: var(--blue-primary);
     transition: .5s;
 }
+
+.form__select {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    border: none;
+    outline: none;
+    padding: 1em;
+    border-radius: 3px;
+    width: 100%;
+    /* border: 1px red solid; */
+}
+
+.form__label {
+    /* font-style: italic; */
+    margin: .2em;
+    color: var(--cyan-primary);
+    font-weight: 600;
+}
+
+.input__group {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}

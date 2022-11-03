@@ -1,0 +1,261 @@
+:root {
+    --white: #ffffff;
+    --white-primary: #fafafa;
+    --gray-primary: #ededed;
+    --gray-secondary: #F6F7F5;
+    --black-primary: #121212;
+    --cyan-primary: #0899ba;
+    --blue-primary: #1d4e89;
+    --blue-secondary: #3368C6;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    color: var(--black-primary);
+    background-color: var(--white);
+    min-height: 100vh;
+    background-image: url(/assets/imgs/circles-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header {
+    width: 95%;
+    padding: 1em;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.add-user {
+    width: 200px;
+}
+
+.header__title {    
+    font-size: 1.8rem;
+}
+
+.main {
+    width: 95%;
+    margin: auto;
+}
+
+/*Search bar */
+.search {
+    width: 95%;
+    margin: auto;
+}
+
+.search-container {
+    max-width: 500px;
+}
+
+.form__group {
+    gap: 0;
+}
+
+
+/* Table utils */
+
+.item--header {
+    display: grid;
+}
+
+.item__col--title {
+    font-weight: 600 !important;
+}
+
+.table,
+.table__container,
+.table--header {
+    width: 100%;
+}
+
+.table__container {
+    height: 80vh;
+    overflow-y: auto;
+    background-color:var(--white-primary);
+    margin-bottom: 2em;
+}
+
+.item {
+    width: 95%;
+    margin: auto;
+    cursor: pointer;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: .4fr .7fr .8fr .35fr .3fr;
+    overflow: hidden;
+    justify-items: center;
+    align-items: center;
+    margin-top: 1.3em;
+    grid-auto-rows: 6rem;
+    border-radius: 4px;
+    padding: 0 2em;
+    box-shadow: 0px 1px 5px -6px rgba(0,0,0,0.75);
+}
+
+.item--header {
+    border: none;
+    box-shadow: none;
+    grid-auto-rows: 4rem;
+    background-color: transparent;
+    font-weight: 600;
+    color: var(--blue-secondary) !important;
+}
+
+.item__col {
+    font-weight: 200;
+    text-align: center;
+    width: 100%;
+}
+
+.item__col--group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.item__col--actions {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.client__img {
+    width: 70px;
+    height: 70px;
+    border: 2px var(--blue-secondary) solid;
+    border-radius: 50%;
+}
+
+.item--highlight-a,
+.item--highlight-b,
+.item--highlight-c,
+.item--highlight-d,
+.item--highlight-e {
+    font-weight: 400;
+    padding: .2em;
+    width: 150px;
+    text-align: center;
+}
+
+.item--highlight-a {
+    color: var(--blue-primary);
+    background-color: #0b4d9e72;
+}
+
+.item--highlight-b {
+    color: var(--cyan-primary);
+    background-color: #1e7fa63e;
+    
+}
+
+.item--highlight-c {
+    color: rgba(17, 204, 120, 0.867);
+    background-color: rgba(17, 204, 120, 0.227);
+}
+
+.item--highlight-d {
+    color: rgba(124, 35, 133, 0.867);
+    background-color: rgba(123, 35, 133, 0.289);
+}
+
+.item--highlight-e {
+    color: #ff0000;
+    background-color: #ff00003b;
+}
+
+@media (max-width: 1120px) {
+    .item {
+        font-size: .9rem;
+    }
+}
+
+@media (max-width: 864px) {
+    .item {
+        font-size: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    .item__col {
+        text-align: center;
+    }
+
+    .item__col--actions,
+    .item__col--title-actions {
+        grid-column: -2/-1;
+    }
+}
+
+@media (max-width: 640px) {
+    .item {
+        font-size: 1rem;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Form */
+
+.form-container {
+    /* display: flex; */
+    display: grid;
+    background-color: var(--white-primary);
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    /* border: 2px red solid; */
+    /* width: 70%; */
+    /* max-width: 750px; */
+    margin: auto;
+    padding: 2em;
+}
+
+.form__group {
+    gap: 2em;
+    align-items: flex-end;
+}
+
+.form__input {
+    padding: 1em;
+    background-color: var(--white);
+}
+
+
+.form__picture {
+    width: 100%;
+    height: 100%;
+    background-image: url(/assets//imgs//add-user.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* .form__picture {
+    width: 100%;
+    height: 350px;
+} */
+
+.add-user-btn {
+    width: 300px;
+}
+
+@media (max-width: 940px) {
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Usuarios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--  -->
+    <!-- Poppins 200-300-500-600 Courgette 400-->
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@200;300;500;600&display=swap"
+        rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="/css/utils/normalize.css">
+    <link rel="stylesheet" href="/css/utils/forms-utils.css">
+    <link rel="stylesheet" href="/css/admin-users.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Gestionar Usuarios</h1>
+        <a href="#" class="add-user form__btn">Agregar Usuario</a>
+    </header>
+
+    <main class="main">
+
+        <section class="search">
+            <div class="search-container">
+                <form action="" class="search">
+                    <div class="form__group">
+                        <input type="text" class="form__input" placeholder="Buscar Usuario">
+                        <button class="form__btn" type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <div class="item item--header">
+            <p class="item__col item__col--title">Rut</p>
+            <p class="item__col item__col--title">Usuario</p>
+            <p class="item__col item__col--title">Mail</p>
+            <p class="item__col item__col--title">Rol</p>
+            <p class="item__col item__col--title item__col--title-actions">Acciones</p>
+        </div>
+            
+        <section class="table">
+            <div class="table__container">
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/1.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Armando Casas</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-a">Cliente</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/2.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Juan Alcachofa</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-b">Medico</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/3.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Homero Simpson</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-c">Cajero</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/4.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Lenny Lastname</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-d">Secretaria</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/5.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Carl Lastname</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-e">Administrador</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/1.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Armando Casas</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-a">Cliente</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/2.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Juan Alcachofa</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-b">Medico</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/3.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Homero Simpson</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-c">Cajero</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/4.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Lenny Lastname</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-d">Secretaria</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/5.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Carl Lastname</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-e">Administrador</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/1.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Armando Casas</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-a">Cliente</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/2.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Juan Alcachofa</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-b">Medico</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/3.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Homero Simpson</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-c">Cajero</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/4.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Lenny Lastname</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-d">Secretaria</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p class="item__col">12345678-9</p>
+                    <div class="item__col item__col--group">
+                        <div class="item-col item__img-container">
+                            <img src="/assets/imgs/profile-pictures/5.jpg" alt="Name-Lastname" class="item__col client__img">
+                        </div>
+                        <p class="item__col">Carl Lastname</p>
+                    </div>
+                    <p class="item__col">examplemail@mail.com</p>
+                    <p class="item__col item--highlight-e">Administrador</p>
+
+                    <div class="item__col item__col--actions">
+                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
+                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <section class="footer__section">
+                <h1 class="footer__logo"><span class="footer__logo--draw">+</span> CuraMe</h1>
+            </section>
+            <div class="footer__line"></div>
+            <p class="footer__group">Copyright &copy; 2022 Grupo 5 - AO_ASY4131_23824833_PCT</p>
+        </div>
+    </footer>
+</body>
+</html>
