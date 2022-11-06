@@ -14,291 +14,692 @@
     <!--  -->
     <link rel="stylesheet" href="/css/utils/normalize.css">
     <link rel="stylesheet" href="/css/utils/forms-utils.css">
+    <link rel="stylesheet" href="/css/utils/table-utils.css">
     <link rel="stylesheet" href="/css/admin-users.css">
     <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
     <header class="header">
         <h1 class="header__title">Gestionar Usuarios</h1>
-        <a href="#" class="add-user form__btn">Agregar Usuario</a>
+        <a href="#" class="add-user form__btn">Agregar Usuario <img src="/assets/icons/user-plus.svg" alt="+"></a>
     </header>
 
     <main class="main">
-
         <section class="search">
             <div class="search-container">
                 <form action="" class="search">
                     <div class="form__group">
                         <input type="text" class="form__input" placeholder="Buscar Usuario">
-                        <button class="form__btn" type="submit">Buscar</button>
+                        <button class="form__btn search__btn" type="submit"><img src="/assets/icons/search.svg" alt="Buscar" class="search-icon"></button>
                     </div>
                 </form>
             </div>
         </section>
-
-        <div class="item item--header">
-            <p class="item__col item__col--title">Rut</p>
-            <p class="item__col item__col--title">Usuario</p>
-            <p class="item__col item__col--title">Mail</p>
-            <p class="item__col item__col--title">Rol</p>
-            <p class="item__col item__col--title item__col--title-actions">Acciones</p>
-        </div>
             
-        <section class="table">
-            <div class="table__container">
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/1.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Armando Casas</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-a">Cliente</p>
+        <section class="users">
+            <table class="table">
+                <thead class="table__header">
+                    <tr>
+                        <th class="table__title">Rut</th>
+                        <th class="table__title">Nombre</th>
+                        <th class="table__title">Mail</th>
+                        <th class="table__title">Rol</th>
+                        <th class="table__title">Estado</th>
+                        <th class="table__title">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table__row">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                    <tr class="table__row table__row--g">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/money.svg" alt="Cajero" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row table__row--g">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/plus-medical.svg" alt="Médico" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/desktop.svg" alt="Secretaria" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row table__row--g">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row table__row--g">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row table__row--g">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row table__row--g">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row table__row--g">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+
+                    <tr class="table__row table__row--g">
+                        <th class="table__content">12345678-9</th>
+                        <th class="table__content">Juan Alcachofa</th>
+                        <th class="table__content">examplemail@mail.com</th>
+                        <th class="table__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></th>
+                        <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                        <th class="table__action"> 
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                            <a href="#"> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                        </th>
+                    </tr>
+                </tbody>
+            </table> 
+        </section>
+
+        <section class="users--mobile">
+            <div class="table--mobile">
+                <div class="row__container">
+                    <a href="" class="mobile__row">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/2.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Juan Alcachofa</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-b">Medico</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row mobile__row--g">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/3.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Homero Simpson</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-c">Cajero</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/4.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Lenny Lastname</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-d">Secretaria</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row mobile__row--g">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/5.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Carl Lastname</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-e">Administrador</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/1.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Armando Casas</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-a">Cliente</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row mobile__row--g">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/2.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Juan Alcachofa</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-b">Medico</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/3.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Homero Simpson</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-c">Cajero</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row mobile__row--g">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/4.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Lenny Lastname</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-d">Secretaria</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/5.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Carl Lastname</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-e">Administrador</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row mobile__row--g">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/1.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Armando Casas</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-a">Cliente</p>
+                <div class="row__container">
+                    <a href="" class="mobile__row">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
+                        </div>
+
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
+
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/2.jpg" alt="Name-Lastname" class="item__col client__img">
+                <div class="row__container">
+                    <a href="" class="mobile__row mobile__row--g">
+                        <div class="col__one">
+                            <div class="col">
+                                <p class="col__title">Rut</p>
+                                <p class="col__content">12345678-9</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Nombre</p>
+                                <p class="col__content">Juan Alcachofa</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Mail</p>
+                                <p class="col__content">examplemail@mail.com</p>
+                            </div>
+
+                            <div class="col">
+                                <p class="col__title">Rol</p>
+                                <p class="col__content"><img src="/assets/icons/client.svg" alt="Client" class="user-role__img"></p>
+                            </div>
                         </div>
-                        <p class="item__col">Juan Alcachofa</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-b">Medico</p>
 
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
-                </div>
+                        <div class="col__two">
+                            <div class="col">
+                                <p class="col__title">Estado</p>
+                                <p class="col__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></p>
+                            </div>
 
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/3.jpg" alt="Name-Lastname" class="item__col client__img">
+                            <div class="col col--actions">
+                                <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit">
+                                <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete">
+                            </div>
                         </div>
-                        <p class="item__col">Homero Simpson</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-c">Cajero</p>
-
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
-                </div>
-
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/4.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Lenny Lastname</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-d">Secretaria</p>
-
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
-                </div>
-
-                <div class="item">
-                    <p class="item__col">12345678-9</p>
-                    <div class="item__col item__col--group">
-                        <div class="item-col item__img-container">
-                            <img src="/assets/imgs/profile-pictures/5.jpg" alt="Name-Lastname" class="item__col client__img">
-                        </div>
-                        <p class="item__col">Carl Lastname</p>
-                    </div>
-                    <p class="item__col">examplemail@mail.com</p>
-                    <p class="item__col item--highlight-e">Administrador</p>
-
-                    <div class="item__col item__col--actions">
-                        <img src="/assets//icons/edit.svg" alt="Edit" class="item__action">
-                        <img src="/assets//icons/trash-can.svg" alt="Delete" class="item__action">
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>

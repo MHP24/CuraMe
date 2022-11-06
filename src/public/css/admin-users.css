@@ -32,6 +32,9 @@ body {
 }
 
 .add-user {
+    display: flex;
+    align-items: center;
+    gap: .2em;
     width: 200px;
 }
 
@@ -58,154 +61,40 @@ body {
     gap: 0;
 }
 
-
-/* Table utils */
-
-.item--header {
-    display: grid;
-}
-
-.item__col--title {
-    font-weight: 600 !important;
-}
-
-.table,
-.table__container,
-.table--header {
-    width: 100%;
-}
-
-.table__container {
-    height: 80vh;
+.users {
+    border-left: 4px var(--blue-secondary) solid;
+    margin: 2em 0 4em;
+    height: 70vh;
     overflow-y: auto;
-    background-color:var(--white-primary);
-    margin-bottom: 2em;
+    box-shadow: 1px 7px 15px -16px var(--black-primary);
 }
 
-.item {
-    width: 95%;
-    margin: auto;
-    cursor: pointer;
-    background-color: #ffffff;
-    display: grid;
-    grid-template-columns: .4fr .7fr .8fr .35fr .3fr;
-    overflow: hidden;
-    justify-items: center;
-    align-items: center;
-    margin-top: 1.3em;
-    grid-auto-rows: 6rem;
-    border-radius: 4px;
-    padding: 0 2em;
-    box-shadow: 0px 1px 5px -6px rgba(0,0,0,0.75);
+.users--mobile {
+    display: none;
+    border-left: 4px var(--blue-secondary) solid;
+    margin: 2em 0 4em;
+    height: 70vh;
+    overflow-y: auto;
+    box-shadow: 1px 7px 15px -16px var(--black-primary);
 }
 
-.item--header {
-    border: none;
-    box-shadow: none;
-    grid-auto-rows: 4rem;
-    background-color: transparent;
-    font-weight: 600;
-    color: var(--blue-secondary) !important;
+.user-enabled__img {
+    width: 25px;
+    height: 25px;
 }
 
-.item__col {
-    font-weight: 200;
-    text-align: center;
-    width: 100%;
+.user-disabled__img {
+    width: 25px;
+    height: 25px;
 }
 
-.item__col--group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
+.user-role__img {
+    width: 25px;
+    height: 25px;
 }
-
-.item__col--actions {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-}
-
-.client__img {
-    width: 70px;
-    height: 70px;
-    border: 2px var(--blue-secondary) solid;
-    border-radius: 50%;
-}
-
-.item--highlight-a,
-.item--highlight-b,
-.item--highlight-c,
-.item--highlight-d,
-.item--highlight-e {
-    font-weight: 400;
-    padding: .2em;
-    width: 150px;
-    text-align: center;
-}
-
-.item--highlight-a {
-    color: var(--blue-primary);
-    background-color: #0b4d9e72;
-}
-
-.item--highlight-b {
-    color: var(--cyan-primary);
-    background-color: #1e7fa63e;
-    
-}
-
-.item--highlight-c {
-    color: rgba(17, 204, 120, 0.867);
-    background-color: rgba(17, 204, 120, 0.227);
-}
-
-.item--highlight-d {
-    color: rgba(124, 35, 133, 0.867);
-    background-color: rgba(123, 35, 133, 0.289);
-}
-
-.item--highlight-e {
-    color: #ff0000;
-    background-color: #ff00003b;
-}
-
-@media (max-width: 1120px) {
-    .item {
-        font-size: .9rem;
-    }
-}
-
-@media (max-width: 864px) {
-    .item {
-        font-size: 1rem;
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
-    }
-
-    .item__col {
-        text-align: center;
-    }
-
-    .item__col--actions,
-    .item__col--title-actions {
-        grid-column: -2/-1;
-    }
-}
-
-@media (max-width: 640px) {
-    .item {
-        font-size: 1rem;
-        grid-template-columns: 1fr;
-    }
-}
-
 
 /* Form */
-
 .form-container {
-    /* display: flex; */
     display: grid;
     background-color: var(--white-primary);
     grid-template-columns: 1fr 1fr;
@@ -218,23 +107,30 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2em;
-    /* border: 2px red solid; */
-    /* width: 70%; */
-    /* max-width: 750px; */
     margin: auto;
     padding: 2em;
 }
 
 .form__group {
-    gap: 2em;
-    align-items: flex-end;
+    gap: 0em;
+    align-items: center;
+}
+
+.search__btn {
+    width: min-content;
+    padding: .35em;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.search-icon {
+    height: 35px;
+
 }
 
 .form__input {
-    padding: 1em;
-    background-color: var(--white);
+    padding: .84em;
+    background-color: var(--gray-primary);
 }
-
 
 .form__picture {
     width: 100%;
@@ -245,13 +141,21 @@ body {
     background-position: center;
 }
 
-/* .form__picture {
-    width: 100%;
-    height: 350px;
-} */
-
 .add-user-btn {
     width: 300px;
+}
+
+/* User Table */
+@media (max-width: 1100px) {
+    .users {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .users--mobile {
+        display: block;
+    }
 }
 
 @media (max-width: 940px) {
