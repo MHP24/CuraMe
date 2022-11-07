@@ -62,11 +62,14 @@
         <div class="form-container">
             <div class="form-picture" style="background-image: url(/assets/imgs/login-picture.jpg);"></div>
             <div class="form-sub-container">
+                <%if(msg.length > 0) {%>
+                    <p class="error-msg"><%=msg%></p>
+                <%}%>
                 <div class="titles">
                     <p class="title">¡Bienvenido de vuelta!</p>
                     <p class="subtitle">Inicia Sesi&oacute;n</p>
                 </div>
-                <form action="" class="form" style="margin-top: 2em;">
+                <form action="/login" method="POST" class="form" style="margin-top: 2em;">
                     <input type="email" placeholder="Email" name="mail" id="mail" class="form__input"
                         autocomplete="off">
                     <input type="password" placeholder="Contraseña" name="password" id="password"

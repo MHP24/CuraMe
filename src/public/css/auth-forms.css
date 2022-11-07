@@ -48,6 +48,7 @@
 
 .form-sub-container {
     /* border: 1px blue solid; */
+    position: relative;
     padding: 0 2em;
     display: flex;
     flex-direction: column;
@@ -65,6 +66,17 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.error-msg {
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    color: #e01d1d;
+    background-color: #ff000052;
+    font-weight: 600;
+    padding: 1em;
+    border-radius: 4px;
 }
 
 .titles {
