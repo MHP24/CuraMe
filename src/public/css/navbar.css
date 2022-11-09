@@ -40,6 +40,7 @@
 }
 
 .nav__logo {
+    color: var(--black-primary);
     /* border: 2px red solid; */
     font-size: 1.7rem;
     font-family: 'Courgette', cursive;
@@ -82,6 +83,25 @@
 
 .nav__link--active {
     font-weight: 400;
+}
+
+.nav__btn {
+    text-align: center;
+    background-color: var(--blue-secondary);
+    color: var(--white);
+    padding: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 2%;
+    transition: .5s;
+    width: 150px;
+}
+
+.nav__btn:hover {
+    background-color: var(--blue-primary);
+    transition: .5s;
 }
 
 #nav__menu {

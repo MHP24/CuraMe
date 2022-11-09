@@ -23,40 +23,7 @@
 </head>
 
 <body>
-    <nav class="nav">
-        <div class="nav__container">
-            <h1 class="nav__logo"><span class="nav__logo--draw">+</span> CuraMe</h1>
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="#" class="nav__link nav__link--active">Inicio</a>
-                </li>
-
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Nosotros</a>
-                </li>
-
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Sucursales</a>
-                </li>
-
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Ayuda</a>
-                </li>
-
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Contacto</a>
-                </li>
-
-                <li class="nav__item nav__item--msc">
-                    <button class="btn--g nav__btn">Iniciar Sesi&oacute;n</button>
-                </li>
-            </ul>
-
-            <div id="nav__menu">
-                <img src="/assets/icons/menu.svg" alt="Menu" id="menu__img">
-            </div>
-        </div>
-    </nav>
+    <%- include("components/navbar.ejs")%>
 
     <main class="main">
         <div class="form-container">
@@ -74,6 +41,9 @@
                         autocomplete="off">
                     <input type="password" placeholder="Contraseña" name="password" id="password"
                         class="form__input" autocomplete="off">
+
+                    <a href="/register" class="auth-link">¿No tienes una cuenta? Reg&iacute;strate aqu&iacute;</a>
+
                     <button type="submit" class="form__btn">Iniciar Sesi&oacute;n</button>
                 </form>
             </div>

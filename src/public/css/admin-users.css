@@ -57,10 +57,6 @@ body {
     max-width: 500px;
 }
 
-.form__group {
-    gap: 0;
-}
-
 .users {
     border-left: 4px var(--blue-secondary) solid;
     margin: 2em 0 4em;
@@ -101,6 +97,7 @@ body {
     width: 90%;
     margin: auto;
     border-radius: 5px;
+    box-shadow: 0px 1px 9px -6px rgba(0,0,0,0.75);
 }
 
 .user-form {
@@ -112,7 +109,7 @@ body {
 }
 
 .form__group {
-    gap: 0em;
+    gap: 1em;
     align-items: center;
 }
 
@@ -139,10 +136,24 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .add-user-btn {
     width: 300px;
+}
+
+.form__select {
+    box-shadow: 0px 1px 9px -6px rgba(0,0,0,0.75);
 }
 
 /* User Table */
