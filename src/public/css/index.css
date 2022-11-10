@@ -84,6 +84,10 @@
     max-width: 400px;
     display: flex;
     justify-content: center;
+    /* latest */
+    overflow: hidden; 
+    height: 70vh; 
+    width: auto;
 }
 
 .hero__img {
@@ -615,6 +619,7 @@
 }
 
 .center__name {
+    text-align: left;
     font-weight: 300;
     line-height: 1.5;
 }
