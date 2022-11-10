@@ -25,7 +25,7 @@ export const login = async ({ body }: any, res: any) => {
         return;
     }
     const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE email = ?', [mail]);
-    const { rut } = userData[0]
+    const { rut } = userData[0];
 
     const token = jwt.sign({id: rut}, 'KEY_SECRET', {
         expiresIn: process.env.JWT_TOKEN_EXPIRES

@@ -43,7 +43,7 @@ body {
 }
 
 .main {
-    width: 95%;
+    width: 100%;
     margin: auto;
 }
 
@@ -58,8 +58,9 @@ body {
 }
 
 .users {
+    width: 96%;
+    margin: 2em auto 2em;
     border-left: 4px var(--blue-secondary) solid;
-    margin: 2em 0 4em;
     height: 70vh;
     overflow-y: auto;
     box-shadow: 1px 7px 15px -16px var(--black-primary);
@@ -68,12 +69,11 @@ body {
 .users--mobile {
     display: none;
     border-left: 4px var(--blue-secondary) solid;
-    margin: 2em 0 4em;
+    margin: 2em auto 2em;
     height: 70vh;
     overflow-y: auto;
     box-shadow: 1px 7px 15px -16px var(--black-primary);
 }
-
 .user-enabled__img {
     width: 25px;
     height: 25px;

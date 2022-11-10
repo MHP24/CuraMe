@@ -16,76 +16,83 @@
     <link rel="stylesheet" href="/css/utils/normalize.css">
     <link rel="stylesheet" href="/css/utils/forms-utils.css">
     <link rel="stylesheet" href="/css/payment.css">
+    <link rel="stylesheet" href="/css/utils/handler.css">
     <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
+
     <main class="main">
-        <section class="payment">
-            <div class="payment__container">
-                <div class="payment__step">
-                    <div class="payment__steps">
-                        <p class="step__name step__name--completed">Datos</p>
-                        <div class="step__line step__line--completed"></div>
-                        <p class="step__name step__name--completed">Detalles</p>
-                        <div class="step__line step__line--completed"></div>
-                        <p class="step__name step__name--completed">Pago</p>
+        <%- include("components/admin-navbar.ejs")%>
+        <section class="content">
+            <section class="content__head"><img src="/assets/icons/left-burger.svg" alt="menu" id="menu"></section>
+            <section class="payment">
+                <div class="payment__container">
+                    <div class="payment__step">
+                        <div class="payment__steps">
+                            <p class="step__name step__name--completed">Datos</p>
+                            <div class="step__line step__line--completed"></div>
+                            <p class="step__name step__name--completed">Detalles</p>
+                            <div class="step__line step__line--completed"></div>
+                            <p class="step__name step__name--completed">Pago</p>
+                        </div>
+                        <form action="" class="form__payment">
+                            <p class="step__title">Detalles de pago</p>
+                            <div class="input__group" style="flex-direction: row; align-items: center;">
+                                <label for="rut" class="form__label">M&eacute;todo de pago</label>
+                                <select name="" id="" class="form__select"  style="background-color: #EDEDED;">
+                                    <option value="" class="form__option">M&eacute;todo 1</option>
+                                    <option value="" class="form__option">M&eacute;todo 2</option>
+                                    <option value="" class="form__option">M&eacute;todo 3</option>
+                                    <option value="" class="form__option">M&eacute;todo 4</option>
+                                </select>
+                            </div>
+                            <div class="input__group">
+                                <label for="password" class="form__label">Nombre Completo</label>
+                                <input type="text" class="form__input">
+                            </div>
+    
+                            <div class="input__group">
+                                <label for="password" class="form__label">N&uacute;mero Tel&eacute;fonico</label>
+                                <input type="text" class="form__input">
+                            </div>
+    
+    
+                            <div class="form__group">
+                                <a class="form__btn" href="/admin/payment/2">Volver</a>
+                                <a class="form__btn" href="#">Siguiente</a>
+                            </div>
+                        </form>
                     </div>
-                    <form action="" class="form__payment">
-                        <p class="step__title">Detalles de pago</p>
-                        <div class="input__group" style="flex-direction: row; align-items: center;">
-                            <label for="rut" class="form__label">M&eacute;todo de pago</label>
-                            <select name="" id="" class="form__select"  style="background-color: #EDEDED;">
-                                <option value="" class="form__option">M&eacute;todo 1</option>
-                                <option value="" class="form__option">M&eacute;todo 2</option>
-                                <option value="" class="form__option">M&eacute;todo 3</option>
-                                <option value="" class="form__option">M&eacute;todo 4</option>
-                            </select>
+    
+                    <div class="payment__summary">
+                        <div class="summary__group">
+                            <p class="summary__title">Atenci&oacute;n M&eacute;dica</p>
+                            <div class="summary__img-container">
+                                <img src="/assets/imgs/c19.jpg" alt="Atencion Médica" class="summary__img">
+                            </div>
+                            <p class="summary__info">Vacuna COVID 19</p>
                         </div>
-                        <div class="input__group">
-                            <label for="password" class="form__label">Nombre Completo</label>
-                            <input type="text" class="form__input">
+                        <div class="summary__group">
+                            <div class="payment__detail">
+                                <p class="payment__tite">Sub Total</p>
+                                <p class="payment__price">$0</p>
+                            </div>
+    
+                            <div class="payment__detail">
+                                <p class="payment__tite payment__tite--discount">Descuentos</p>
+                                <p class="payment__price payment__tite--discount">$0</p>
+                            </div>
+    
+                            <div class="payment__detail">
+                                <p class="payment__tite payment__tite--final">Total</p>
+                                <p class="payment__price payment__tite--final">$0</p>
+                            </div>
                         </div>
-
-                        <div class="input__group">
-                            <label for="password" class="form__label">N&uacute;mero Tel&eacute;fonico</label>
-                            <input type="text" class="form__input">
-                        </div>
-
-
-                        <div class="form__group">
-                            <button class="form__btn" type="submit">Volver</button>
-                            <button class="form__btn" type="submit">Siguiente</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-
-                <div class="payment__summary">
-                    <div class="summary__group">
-                        <p class="summary__title">Atenci&oacute;n M&eacute;dica</p>
-                        <div class="summary__img-container">
-                            <img src="/assets/imgs/c19.jpg" alt="Atencion Médica" class="summary__img">
-                        </div>
-                        <p class="summary__info">Vacuna COVID 19</p>
-                    </div>
-                    <div class="summary__group">
-                        <div class="payment__detail">
-                            <p class="payment__tite">Sub Total</p>
-                            <p class="payment__price">$0</p>
-                        </div>
-
-                        <div class="payment__detail">
-                            <p class="payment__tite payment__tite--discount">Descuentos</p>
-                            <p class="payment__price payment__tite--discount">$0</p>
-                        </div>
-
-                        <div class="payment__detail">
-                            <p class="payment__tite payment__tite--final">Total</p>
-                            <p class="payment__price payment__tite--final">$0</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
         </section>
     </main>
+    <script src="/js/admin-navigation.js"></script>
 </body>
 </html>
