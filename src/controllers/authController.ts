@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
+// import { promisify } from 'util';
 import { DatabaseConnection } from '../database/db';
 
 export const register = async ({ body }: any, res: any) => {
@@ -19,25 +20,53 @@ export const register = async ({ body }: any, res: any) => {
 }
 
 export const login = async ({ body }: any, res: any) => {
-    const { mail, password } = body;
-    if(!mail || !password) {
-        res.render('login', {msg: 'Error, complete todos los campos.'});
-        return;
+    try {
+        const { mail, password } = body;
+        if(!mail || !password) {
+            return res.render('login', {msg: 'Error: Complete todos los campos.'});
+        }
+
+        const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE email = ?', [mail]);
+        if(!userData[0]) {
+            return res.render('login', {msg: 'Error: La cuenta no existe.'});
+        }
+        const { rut, contrasena } = userData[0];
+
+        if(!await bcryptjs.compare(password, contrasena)) {
+            return res.render('login', {msg: 'Error: Contraseña incorrecta.'});
+        }
+    
+        const token = jwt.sign({id: rut}, 'KEY_SECRET', {
+            expiresIn: process.env.JWT_TOKEN_EXPIRES
+        });
+    
+        const cookieOptions = {
+            expires: new Date(Date.now()+90 * 24 * 60 * 60 * 1000),
+            httpOnly: true
+        };
+    
+        res.cookie('jwt', token, cookieOptions);
+        return res.redirect('/admin/users');
+    }catch(err) {
+        return res.render('login', {msg: 'Error: reintente nuevamente.'});
     }
-    const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE email = ?', [mail]);
-    const { rut } = userData[0];
+}
 
-    const token = jwt.sign({id: rut}, 'KEY_SECRET', {
-        expiresIn: process.env.JWT_TOKEN_EXPIRES
-    });
+export const isAuthenticated = async (req: any, res: any, next: any) => {
+    if(!req.cookies.jwt) {
+        return res.redirect('/login');
+    }
 
-    const cookieOptions = {
-        expires: new Date(Date.now()+90 * 24 * 60 * 60 * 1000),
-        httpOnly: true
-    };
-
-    res.cookie('jwt', token, cookieOptions);
-    res.redirect('/admin');
+    try {
+        const decode = jwt.verify(req.cookies.jwt, 'KEY_SECRET');
+        const { id } = JSON.parse(JSON.stringify(decode));
+        const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE rut = ?', [id]);
+        req.user = userData;
+        return next();
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
 }
 
 export const logout = (_: any, res: any) => {

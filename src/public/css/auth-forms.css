@@ -49,7 +49,7 @@
 .form-sub-container {
     /* border: 1px blue solid; */
     position: relative;
-    padding: 0 2em;
+    padding: 0 4em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,14 +69,16 @@
 }
 
 .error-msg {
+    text-align: center;
     position: absolute;
-    top: 20%;
-    left: 3%;
+    top: 10%;
+    left: 5%;
+    right: 5%;
     color: #e01d1d;
     background-color: #ff000052;
     font-weight: 600;
-    padding: 1em;
-    border-radius: 4px;
+    padding: 1.3em;
+    border-radius: 3px;
 }
 
 .titles {
@@ -98,6 +100,10 @@
     display: flex;
     flex-direction: column;
     gap: 2em;
+}
+
+.form__input {
+    padding: .9em;
 }
 
 .auth-link {
