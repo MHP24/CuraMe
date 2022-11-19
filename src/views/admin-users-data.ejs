@@ -24,6 +24,9 @@
 
     <div class="form-container">
         <form action="create-user" class="user-form" method="POST">
+            <%if(msg.length > 0) {%>
+                <p class="msg <%=msgType%>-msg"><%=msg%></p>
+            <%}%>
             <input type="text" class="form__input" placeholder="Rut" name="rut" autocomplete="off">
             <div class="form__group">
                 <input type="text" placeholder="Nombre" class="form__input" name="name" autocomplete="off">

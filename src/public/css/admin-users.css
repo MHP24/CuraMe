@@ -101,11 +101,29 @@ body {
 }
 
 .user-form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 2em;
     margin: auto;
     padding: 2em;
+}
+
+.msg {
+    text-align: center;
+    font-weight: 600;
+    padding: 1.3em;
+    border-radius: 3px;
+}
+
+.error-msg {
+    color: #e01d1d;
+    background-color: #ff000052;
+}
+
+.success-msg {
+    color: #1de057;
+    background-color: #00ff6e52;
 }
 
 .form__group {
