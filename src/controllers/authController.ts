@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
-// import { promisify } from 'util';
 import { DatabaseConnection } from '../database/db';
 
 export const register = async ({ body }: any, res: any) => {
@@ -53,6 +52,7 @@ export const login = async ({ body }: any, res: any) => {
 }
 
 export const isAuthenticated = async (req: any, res: any, next: any) => {
+
     if(!req.cookies.jwt) {
         return res.redirect('/login');
     }
@@ -62,6 +62,11 @@ export const isAuthenticated = async (req: any, res: any, next: any) => {
         const { id } = JSON.parse(JSON.stringify(decode));
         const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE rut = ?', [id]);
         req.user = userData;
+
+        if((req.path).includes('admin') && userData[0].rol !== 2) {
+            return res.redirect('/');
+        }
+
         return next();
     } catch (err) {
         console.log(err);
