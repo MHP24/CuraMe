@@ -1,41 +1,7 @@
 import { DatabaseConnection } from '../database/db';
 import bcryptjs from 'bcryptjs';
 
-const insertRoles: any = {
-    3: 'INSERT INTO medico (id_especialidad, id_sucursal, rut) VALUES(?, ?, ?);',
-    4: 'INSERT INTO secretaria (id_sucursal, rut) VALUES(?, ?);',
-    5: 'INSERT INTO cajero (id_sucursal, rut) VALUES(?, ?);'
-}
-
-const selectRoles: any = {
-    1: 'SELECT * FROM paciente WHERE rut = ?;',
-    2: 'SELECT * FROM paciente WHERE rut = ?;',
-    3: 'SELECT e.nombre_especialidad, s.direccion FROM medico r JOIN sucursal s ON s.id_sucursal = r.id_sucursal JOIN especialidad e ON r.id_especialidad = e.id_especialidad WHERE r.rut = ? LIMIT 1;',
-    4: 'SELECT s.direccion FROM secretaria r JOIN sucursal s on r.id_sucursal = s.id_sucursal WHERE r.rut = ?;',
-    5: 'SELECT s.direccion FROM cajero r JOIN sucursal s on r.id_sucursal = s.id_sucursal WHERE r.rut = ?;'
-}
-
-const selectOldData: any = {
-    3: 'SELECT id_especialidad, id_sucursal FROM medico WHERE rut = ?;',
-    4: 'SELECT id_sucursal FROM secretaria WHERE rut = ?;',
-    5: 'SELECT id_sucursal FROM cajero WHERE rut = ?;'
-}
-
-// const deletRoles: any = {
-//     3: 'DELETE FROM medico WHERE rut = ?',
-//     4: 'DELETE FROM secretaria WHERE rut = ?',
-//     5: 'DELETE FROM cajero WHERE rut = ?'
-// }
-
-const role: any = {
-    1: 'Paciente',
-    2: 'Administrador',
-    3: 'Médico',
-    4: 'Secretaría',
-    5: 'Cajero'
-}
-
-
+import { insertRoles, selectRoles, deleteRoles, updateRoles, role } from '../utils/utils.module.';
 
 export const adminUsers = async ({ user }: any, res: any) => {
     const users = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario', []);
@@ -76,7 +42,7 @@ export const createUser = async ({ body }: any, res: any) => {
             params = [skill, ...params];
         }
 
-        DatabaseConnection.getInstance().doQuery(getQuery(Number(role), insertRoles), params);
+        DatabaseConnection.getInstance().doQuery(insertRoles[Number(role)], params);
         return res.render('admin-users-data', {
             skills, centers, msgType:
                 'success', msg: 'Usuario agregado correctamente.'
@@ -97,50 +63,52 @@ export const deleteUser = async ({ params }: any, res: any) => {
 
 export const updateMenu = async ({ params }: any, res: any) => {
     const { rut } = params;
+    // Data from db
     const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE rut = ?', [rut]);
+    const { rol } = userData[0];
     const skills = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM especialidad', []);
     const centers = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM sucursal', []);
-    const roleData = await DatabaseConnection.getInstance().executeQuery(getQuery(Number(userData[0].rol), selectRoles), rut);
+    const roleData = await DatabaseConnection.getInstance().executeQuery(selectRoles[rol], rut);
+    const { direccion, nombre_especialidad } = roleData[0];
+
+    // Label manipulation
     let sucursal = 'Sin sucursal';
     let especialidad = 'Sin especialidad';
 
-    if (roleData[0].direccion !== undefined) {
-        sucursal = roleData[0].direccion;
+    if (direccion !== undefined) {
+        sucursal = direccion;
     }
 
-    if (roleData[0].nombre_especialidad !== undefined) {
-        especialidad = roleData[0].nombre_especialidad
+    if (nombre_especialidad !== undefined) {
+        especialidad = nombre_especialidad
     }
-    return res.render('admin-users-edit', { userData, skills, centers, roleData, role: role[userData[0].rol], sucursal, especialidad });
+    return res.render('admin-users-edit', { userData, skills, centers, roleData, role: role[rol], sucursal, especialidad });
 }
 
 export const updateUser = async (req: any, res: any) => {
     const { rut } = req.params;
-    const { name, lastname, address, role, phone, mail } = req.body
-    console.log(req.body);
-    const userData = await DatabaseConnection.getInstance().executeQuery('SELECT rol, rut FROM usuario WHERE rut = ?', [rut]);
-    const oldRoleData = await DatabaseConnection.getInstance().executeQuery(getQuery(Number(userData[0].rol), selectOldData), rut);
+    const { name, lastname, address, phone, mail, role:_role, center, skill } = req.body
+    const role = Number(_role);
+    const oldData = await DatabaseConnection.getInstance().executeQuery('SELECT rol, rut FROM usuario WHERE rut = ?', [rut]);
+    const { rol: oldRole } = oldData[0];
 
-    DatabaseConnection.getInstance().doQuery('UPDATE usuario SET nombre = ?, apellido = ?, telefono = ?, email = ?, direccion = ? WHERE rut = ?', 
-    [name, lastname, +phone, mail, address, rut]);
+    // Update user table data
+    DatabaseConnection.getInstance().doQuery('UPDATE usuario SET nombre = ?, apellido = ?, telefono = ?, email = ?, direccion = ?, rol = ? WHERE rut = ?', 
+    [name, lastname, Number(phone), mail, address, Number(role), rut]);
 
-    console.log(oldRoleData);
-    // roleHandler(Number(role), userData[0]);
-    console.log(role, userData[0]);
-    return res.send(role);
+    // Update role data
+    let params: Number[] = [Number(center)];
+    if(role == 3 ) {
+        params = [Number(skill), ...params];
+    }
+
+    if(role !== oldRole) {
+        if(oldRole !== 1) {
+            DatabaseConnection.getInstance().doQuery(deleteRoles[oldRole], [rut]);
+        }
+        DatabaseConnection.getInstance().doQuery(insertRoles[role], [...params, rut]);
+    }else {
+        DatabaseConnection.getInstance().doQuery(updateRoles[role], [...params, rut]);
+    }
+    return res.redirect('/admin/users');
 }
-
-const getQuery = (role: number, queries: any) => {
-    return queries[role];
-}
-
-// const roleHandler = (role: number, user: any) => {
-//     if(user.rol !== role) {
-//         console.log(deletRoles[user.rol]);
-//         DatabaseConnection.getInstance().doQuery(deletRoles[user.rol], [user.rut]);
-//         console.log(deletRoles[user.rol]);
-
-//     }else {
-//         console.log(`NO Cambia de rol ${user.rol} - ${role}`);
-//     }
-// }

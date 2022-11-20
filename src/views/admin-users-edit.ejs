@@ -42,7 +42,6 @@
                     <p class="form__help">Rol actual:</p>
                     <p class="form__help--content"><%=role%></p>
                     <select name="role" id="role" class="form__select">
-                        <option value="-1" class="form__option">Nuevo Rol</option>
                         <option value="3" class="form__option">M&eacute;dico</option>
                         <option value="4" class="form__option">Secretar&iacute;a</option>
                         <option value="5" class="form__option">Cajero</option>
@@ -53,7 +52,6 @@
                     <p class="form__help">Sucursal actual:</p>
                     <p class="form__help--content"><%=sucursal%></p>
                     <select name="center" id="center" class="form__select">
-                        <option value="-1" class="form__option">Nueva Sucursal</option>
                         <%centers.forEach( ({id_sucursal, direccion}) => {%>
                             <option value="<%=id_sucursal%>" class="form__option"><%=direccion%></option>
                         <%})%>
@@ -66,7 +64,6 @@
                 <p class="form__help">Especialidad:</p>
                 <p class="form__help--content"><%=especialidad%></p>
                 <select name="skill" id="skill" class="form__select">
-                    <option value="-1" class="form__option">Nueva Especialidad</option>
                     <%skills.forEach( ({id_especialidad, nombre_especialidad}) => {%>
                         <option value="<%=id_especialidad%>" class="form__option"><%=nombre_especialidad%></option>
                     <%})%>
