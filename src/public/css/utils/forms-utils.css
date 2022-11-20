@@ -4,6 +4,23 @@
     gap: 2em;
 }
 
+.form__group--vertical {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.form__help, .form__help--content {
+    font-weight: 600;
+    color: var(--blue-secondary);
+}
+
+.form__help--content {
+    color: var(--cyan-primary);
+    font-style: italic;
+}
+
 .form__input {
     width: 100%;
     padding: .6em;
