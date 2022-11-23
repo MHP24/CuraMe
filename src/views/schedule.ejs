@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de - 12345678-9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--  -->
+    <!-- Poppins 200-300-500-600 Courgette 400-->
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@200;300;500;600&display=swap"
+        rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="/css/utils/normalize.css">
+    <link rel="stylesheet" href="/css/utils/forms-utils.css">
+    <link rel="stylesheet" href="/css/utils/table-utils.css">
+    <link rel="stylesheet" href="/css/admin-users.css">
+    <link rel="stylesheet" href="/css/utils/handler.css">
+    <link rel="stylesheet" href="/css/schedules.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <main class="main">
+        <%- include("components/admin-navbar.ejs")%>
+
+        <section class="content">
+            <section class="content__head"><img src="/assets/icons/left-burger.svg" alt="menu" id="menu"></section>
+
+            <header class="header">
+                <h1 class="header__title">Gestionar Agenda de 12345678-9</h1>
+            </header>
+
+            <section class="schedule">
+                <div class="schedule__area">
+                        <p class="month">Noviembre 2022</p>
+
+
+                    <ol class="days">
+
+                        <li class="week-day">Lunes</li>
+                        <li class="week-day">Martes</li>
+                        <li class="week-day">Mi&eacute;rcoles</li>
+                        <li class="week-day">Jueves</li>
+                        <li class="week-day">Viernes</li>
+                        <li class="week-day">S&aacute;bado</li>
+                        <li class="week-day">Domingo</li>
+
+                        <li class="day first-day">1</li>
+                        <li class="day">2</li>
+                        <li class="day">3</li>
+                        <li class="day">4</li>
+                        <li class="day">5</li>
+                        <li class="day">6</li>
+                        <li class="day">7</li>
+                        <li class="day">8</li>
+                        <li class="day">9</li>
+                        <li class="day">10</li>
+                        <li class="day">11</li>
+                        <li class="day">12</li>
+                        <li class="day">13</li>
+                        <li class="day">14</li>
+                        <li class="day">15</li>
+                        <li class="day">16</li>
+                        <li class="day">17</li>
+                        <li class="day">18</li>
+                        <li class="day">19</li>
+                        <li class="day">20</li>
+                        <li class="day">21</li>
+                        <li class="day">22</li>
+                        <li class="day">23</li>
+                        <li class="day">24</li>
+                        <li class="day">25</li>
+                        <li class="day">26</li>
+                        <li class="day">27</li>
+                        <li class="day">28</li>
+                        <li class="day">29</li>
+                        <li class="day">30</li>
+                    </ol>
+                </div>
+                <div class="schedule__actions">
+                    <div class="actions__title">
+                        <p class="title__actions">Acciones</p>
+                    </div>
+                    <div class="actions">
+                        <button class="btn--g delete">Eliminar</button>
+                        <button class="btn--g block">Bloquear</button>
+                    </div>
+
+                    <input type="text" placeholder="Detalles" class="form__input">
+                    <input type="text" placeholder="Hora" class="form__input">
+                    <button class="btn--g save">Guardar</button>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <section class="footer__section">
+                <h1 class="footer__logo"><span class="footer__logo--draw">+</span> CuraMe</h1>
+            </section>
+            <div class="footer__line"></div>
+            <p class="footer__group">Copyright &copy; 2022 Grupo 5 - AO_ASY4131_23824833_PCT</p>
+        </div>
+    </footer>
+    <script src="/js/admin-navigation.js"></script>
+</body>
+</html>

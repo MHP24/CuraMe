@@ -24,7 +24,8 @@
 
 .navbar {
     padding: 1em 0 2em 0;
-    background-image: linear-gradient(to top, #3368C6 0%, #0899ba 100%);
+    /* background-image: linear-gradient(to top, #3368C6 0%, #0899ba 100%); */
+    background-color: var(--black-primary);
     display: flex;
     flex-direction: column;
     align-items: center;

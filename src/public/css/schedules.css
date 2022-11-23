@@ -1,0 +1,232 @@
+:root {
+    --white: #ffffff;
+    --white-primary: #fafafa;
+    --gray-primary: #ededed;
+    --gray-secondary: #F6F7F5;
+    --black-primary: #121212;
+    --black-secondary: #1c1c1c;
+    --cyan-primary: #0899ba;
+    --blue-primary: #1d4e89;
+    --blue-secondary: #3368C6;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
+body {
+    background-color: var(--white-primary);
+}
+
+.btn--g {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    text-align: center;
+    background-color: var(--blue-secondary);
+    color: var(--white);
+    padding: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 2%;
+    transition: .5s;
+    width: 150px;
+}
+
+.btn--g:hover {
+    background-color: var(--blue-primary);
+    transition: .5s;
+}
+
+.docs__container {
+    padding: 1em;
+    background-color: var(--gray-primary);
+    height: 60vh;
+    overflow-y: auto;
+    display: grid;
+    width: 95%;
+    margin: auto;
+    margin-top: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+.doc {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+    border-radius: 4px;
+    background-color: var(--white);
+}
+
+.doc__rut {
+    font-weight: 400;
+}
+
+.doc__name {
+    font-style: italic;
+}
+
+.doc__data {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Schedule */
+
+.schedule {
+    box-shadow: 1px 7px 15px -16px var(--black-primary);
+    background-color: var(--white);
+    padding: 2em;
+    border-radius: 4px;
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr .6fr;
+    justify-content: space-evenly;
+    gap: 2em;
+}
+
+.schedule__area {
+    background-color: var(--white);
+}
+
+.month {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: .5em;
+}
+
+.week-day {
+    padding: .7em;
+    background-color: var(--gray-primary);
+    font-weight: 600;
+    color: var(--blue-secondary);
+}
+
+.days {
+    font-size: 1.2rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0;
+    text-align: center;
+}
+
+.fist-day {
+    grid-column-start: 5;
+}
+
+.day {
+    padding: 1em;
+    font-weight: 300;
+}
+
+.schedule__actions {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+    gap: 2em;
+    /* border: 2px red solid; */
+    width: 100%;
+}
+
+.actions__title {
+    justify-self: flex-start;
+    width: 100%;
+    background-color: var(--white-primary);
+    padding: 1em;
+
+}
+
+.title__actions {
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--blue-secondary);
+    font-weight: 600;
+    font-style: italic;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+    gap: 1em;
+}
+.save {
+    width: 100%;
+}
+
+
+.delete {
+    background-color: var(--cyan-primary);
+}
+
+.block {
+    background-color: var(--black-secondary);
+}
+
+@media (max-width: 1370px) {
+    .schedule {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bills {
+    width: 95%;
+    margin: auto;
+    margin-top: 2em;
+    background-color: var(--gray-primary);
+    height: 70vh;
+    overflow-y: auto;
+    padding: 1em;
+}
+
+.bill {
+    margin: 1em 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.bill__id,
+.bill__date,
+.bill__time,
+.bill__employee {
+    width: 100%;
+}
+
+.bill__id {
+    font-weight: 600;
+}
+
+
+@media (max-width: 660px) {
+    .bill {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2em;
+    }
+}
+
+@media (max-width: 452px) {
+    .bill {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
