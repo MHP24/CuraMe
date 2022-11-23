@@ -24,32 +24,64 @@
 
 <body>
     <nav class="nav">
-    <%- include("components/navbar.ejs")%>
+        <div class="nav__container">
+            <a href="/" class="nav__link-logo" style="text-decoration: none;"><h1 class="nav__logo"><span class="nav__logo--draw">+</span> CuraMe</h1></a>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/#hero" class="nav__link">Inicio</a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="/#about" class="nav__link">Nosotros</a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="/#centers" class="nav__link">Sucursales</a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="/#faq" class="nav__link">Ayuda</a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="/#contact" class="nav__link">Contacto</a>
+                </li>
+    
+                <li class="nav__item nav__item--msc">
+                    <a href="/logout" class="btn--g nav__btn">Cerrar Sesi&oacute;n</a>
+                </li>
+            </ul>
+    
+            <div id="nav__menu">
+                <img src="/assets/icons/menu.svg" alt="Menu" id="menu__img">
+            </div>
+        </div>
+    </nav>
 
     <main class="main">
 
         <div class="bg-c"></div>
         <div class="profile content">
-            <h2 class="profile__title">Miguel Henríquez</h2>
+            <h2 class="profile__title"><%=user[0].nombre%> <%=user[0].apellido%></h2>
 
             <div class="data-group">
                 <div class="data-title">Rut</div>
-                <div class="data-content">12345678-9</div>
+                <div class="data-content"><%=user[0].rut%></div>
             </div>
 
             <div class="data-group">
                 <div class="data-title">Direcci&oacute;n</div>
-                <div class="data-content">Mi Casa #123</div>
+                <div class="data-content"><%=user[0].direccion%></div>
             </div>
 
             <div class="data-group">
                 <div class="data-title">Tel&eacute;fono</div>
-                <div class="data-content">+569 89988998</div>
+                <div class="data-content">+569 <%=user[0].telefono%></div>
             </div>
 
             <div class="data-group">
                 <div class="data-title">Email</div>
-                <div class="data-content">example@mail.com</div>
+                <div class="data-content"><%=user[0].email%></div>
             </div>
 
             <div class="form__group">

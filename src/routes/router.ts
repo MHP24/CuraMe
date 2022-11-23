@@ -1,8 +1,10 @@
 import express from 'express';
 import { register, login, logout, isAuthenticated } from '../controllers/authController';
-import { addUser, adminUsers, createUser, deleteUser, updateMenu, updateUser } from '../controllers/userController';
+import { addUser, adminUsers, createUser, deleteUser, updateMenu, updateUser } from '../controllers/adminUserController';
+import { profile } from '../controllers/userController';
 export const router = express.Router();
 router.get('/', (_, res) => res.render('index'));
+router.get('/home', (_, res) => res.render('index2'));
 router.get('/login', (_, res) => res.render('login', {msg: ''}));
 router.post('/login', login);
 router.get('/register', (_, res) => res.render('register'));
@@ -21,5 +23,5 @@ router.get('/admin/payment/3', (_, res) => res.render('payment-3'));
 router.get('/admin/bills', (_, res) => res.render('bills'));
 router.get('/admin/doc-profile', (_, res) => res.render('doc-profile'));
 router.get('/admin/docs', (_, res) => res.render('docs'));
-router.get('/profile', (_, res) => res.render('profile'));
+router.get('/profile', isAuthenticated, profile);
 router.get('/admin/schedule', (_, res) => res.render('schedule'));

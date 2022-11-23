@@ -43,9 +43,13 @@ export const login = async ({ body }: any, res: any) => {
             expires: new Date(Date.now()+90 * 24 * 60 * 60 * 1000),
             httpOnly: true
         };
-    
         res.cookie('jwt', token, cookieOptions);
-        return res.redirect('/admin/users');
+
+        if(userData[0].rol === 2) {
+            return res.redirect('/admin/users');
+        }
+
+        return res.redirect('/home')
     }catch(err) {
         return res.render('login', {msg: 'Error: reintente nuevamente.'});
     }
