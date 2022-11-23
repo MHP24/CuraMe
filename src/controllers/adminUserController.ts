@@ -24,13 +24,13 @@ export const createUser = async ({ body }: any, res: any) => {
             phone, role, center, skill, mail, password
         } = body;
 
-        if (!rut || !name || !lastname || !address ||
-            !phone || !role || !center || !skill || !mail || !password) {
-            return res.render('admin-users-data', {
-                skills, centers, msgType:
-                    'error', msg: 'Error: Complete todos los campos.'
-            });
-        }
+        // if (!rut || !name || !lastname || !address ||
+        //     !phone || !role || !center || !skill || !mail || !password) {
+        //     return res.render('admin-users-data', {
+        //         skills, centers, msgType:
+        //             'error', msg: 'Error: Complete todos los campos.'
+        //     });
+        // }
 
         const passwordHash = await bcryptjs.hash(password, 8);
         DatabaseConnection.getInstance().doQuery('INSERT INTO usuario VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [

@@ -28,16 +28,19 @@
     color: var(--blue-secondary);
     font-weight: 600;
     font-size: 1rem;
-    padding: 1em 0;
+    padding: 1em;
+    text-align: left;
+
+
 }
 
 .table__row, .table__content {
     cursor: default;
-    padding: 1em 0;
-    text-align: center;
+    text-align: left;
     border-bottom: .5px var(--gray-primary) solid;
     color: var(--color-c4);
     font-weight: 300;
+    padding: 1em;
 }
 
 .table__row--g {
@@ -57,6 +60,14 @@
     margin: .5em;
 }
 
+.table__title--actions {
+    text-align: center;
+}
+
+.user-disabled__img,
+.user-enabled__img {
+    transform: translateX(100%);
+}
 /* Mobile table */
 .mobile__row {
     display: flex;

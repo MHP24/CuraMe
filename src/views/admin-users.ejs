@@ -29,7 +29,7 @@
             <section class="content__head"><img src="/assets/icons/left-burger.svg" alt="menu" id="menu"></section>
 
             <header class="header">
-                <h1 class="header__title">Gestionar Usuarios <%=reqUser[0].nombre%> <%=reqUser[0].apellido%></h1>
+                <h1 class="header__title">Buenas Tardes, <%=reqUser[0].nombre%> <%=reqUser[0].apellido%></h1>
                 <a href="/admin/create-user" class="add-user form__btn">Agregar Usuario <img src="/assets/icons/user-plus.svg" alt="+"></a>
             </header>
     
@@ -53,7 +53,7 @@
                             <th class="table__title">Mail</th>
                             <th class="table__title">Rol</th>
                             <th class="table__title">Estado</th>
-                            <th class="table__title">Acciones</th>
+                            <th class="table__title table__title--actions">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,9 +73,9 @@
                                 <%}%>
 
                                 <%if(activo) {%>
-                                    <th class="table__content"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-endabled__img"></th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-check.svg" alt="Activo" class="user-enabled__img"></th>
                                 <%}else {%>
-                                    <th class="table__content"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
                                 <%}%>
                                 <th class="table__action"> 
                                     <a href="/admin/edit-user/<%=rut%>"> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
