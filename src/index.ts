@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 /* Front config */
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/templates');
 app.use(express.static(__dirname + '/public'));
 
 /* Data processing config */
