@@ -21,7 +21,7 @@ router.get('/admin/payment/2', (_, res) => res.render('payment-2'));
 router.get('/admin/payment/3', (_, res) => res.render('payment-3'));
 // 
 router.get('/admin/bills', (_, res) => res.render('bills'));
-router.get('/admin/doc-profile', (_, res) => res.render('doc-profile'));
+router.get('/doc-profile', (_, res) => res.render('doc-profile'));
 router.get('/admin/docs', (_, res) => res.render('docs'));
 router.get('/profile', isAuthenticated, profile);
 router.get('/admin/schedule', (_, res) => res.render('schedule'));
