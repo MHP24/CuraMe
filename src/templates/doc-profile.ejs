@@ -16,14 +16,13 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/utils/forms-utils.css">
     <link rel="stylesheet" href="/css/utils/table-utils.css">
-    <link rel="stylesheet" href="/css/admin-users.css">
     <link rel="stylesheet" href="/css/utils/handler.css">
-    <link rel="stylesheet" href="/css/schedules.css">
     <link rel="stylesheet" href="/css/medic.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/schedules.css">
+
 </head>
 <body>
-
 
     <main class="medic-menu">
         <section class="content">
@@ -62,15 +61,13 @@
                 </div>
             </nav>
 
-            <header class="header">
-                <h1 class="header__title">Buenas tardes, Don Miguelo</h1>
+            <header class="header header--medic">
+                <h1 class="header__title">Buenas tardes, <%=userData.nombre%> <%=userData.apellido%></h1>
             </header>
 
             <section class="schedule">
                 <div class="schedule__area">
-                        <p class="month">Noviembre 2022</p>
-
-
+                    <p class="month">Diciembre 2022</p>
                     <ol class="days">
 
                         <li class="week-day">Lunes</li>
@@ -127,7 +124,163 @@
                     <button class="btn--g save">Guardar</button>
                 </div>
 
-                <div class="patients">No hay pacientes en espera...</div>
+                <section class="users">
+                    <table class="table">
+                        <thead class="table__header">
+                            <tr>
+                                <th class="table__title">Rut</th>
+                                <th class="table__title">Nombre</th>
+                                <th class="table__title">Tipo</th>
+                                <th class="table__title">Estado</th>
+                                <th class="table__title table__title--actions">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-check.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-check.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-check.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-check.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-check.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-check.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+
+                            <tr class="table__row">
+                                <th class="table__content">12345678-9</th>
+                                <th class="table__content">Armando Casas</th>
+                                <th class="table__content">Consulta</th>
+                                    <th class="table__content table__content--status"><img src="/assets/icons/user-disabled.svg" alt="Inactivo" class="user-disabled__img"></th>
+                                <th class="table__action"> 
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/edit.svg" alt="edit"></a>
+                                    <a href=""> <img class= "table__action__img" src="/assets/icons/trash-can.svg" alt="delete"></a>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
             </section>
         </section>
     </main>

@@ -49,7 +49,7 @@ export const login = async ({ body }: any, res: any) => {
             return res.redirect('/admin/users');
         }
 
-        return res.redirect('/home')
+        return res.redirect('/');
     }catch(err) {
         return res.render('login', {msg: 'Error: reintente nuevamente.'});
     }

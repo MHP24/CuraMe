@@ -4,7 +4,6 @@ import { addUser, adminUsers, createUser, deleteUser, updateMenu, updateUser } f
 import { profile } from '../views/users';
 export const router = express.Router();
 router.get('/', (_, res) => res.render('index'));
-router.get('/home', (_, res) => res.render('index2'));
 router.get('/login', (_, res) => res.render('login', {msg: ''}));
 router.post('/login', login);
 router.get('/register', (_, res) => res.render('register'));

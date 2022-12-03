@@ -85,18 +85,19 @@ body {
 
 .schedule {
     box-shadow: 1px 7px 15px -16px var(--black-primary);
-    background-color: var(--white);
+    background-color: var(--gray-primary);
     padding: 2em;
     border-radius: 4px;
     width: 95%;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr .6fr;
+    grid-template-columns: 1fr .4fr;
     justify-content: space-evenly;
     gap: 2em;
 }
 
 .schedule__area {
+    padding: 2em;
     background-color: var(--white);
 }
 
@@ -133,6 +134,7 @@ body {
 }
 
 .schedule__actions {
+    padding: 1em;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
@@ -146,7 +148,7 @@ body {
 .actions__title {
     justify-self: flex-start;
     width: 100%;
-    background-color: var(--white-primary);
+    /* background-color: var(--white-primary); */
     padding: 1em;
 
 }
@@ -156,10 +158,10 @@ body {
     text-align: center;
     color: var(--blue-secondary);
     font-weight: 600;
-    font-style: italic;
 }
 
 .actions {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-around;
@@ -171,11 +173,13 @@ body {
 
 
 .delete {
-    background-color: var(--cyan-primary);
+    width: 100%;
+    background-color: rgb(246, 83, 83);
 }
 
 .block {
-    background-color: var(--black-secondary);
+    width: 100%;
+    background-color: var(--cyan-primary);
 }
 
 @media (max-width: 1370px) {
@@ -229,4 +233,22 @@ body {
     .bill {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+.form__input {
+    background-color: var(--gray-secondary);
+}
+
+.users {
+    grid-column: 1/-1;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+}
+
+.header--medic {
+    margin: 3em;
+    margin-top: 8em;
 }
