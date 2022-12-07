@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
-import { DatabaseConnection } from '../database/db';
+import { DatabaseConnection } from '../models/database/db';
 
 export const register = async ({ body }: any, res: any) => {
     const { rut, name, lastname, phone, address, mail, password } = body;

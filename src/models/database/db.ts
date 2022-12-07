@@ -21,7 +21,6 @@ export class DatabaseConnection {
             password: process.env.DB_PASS,
             database: process.env.DB_DATABASE
         });
-
         this.connection.connect();
     }
 

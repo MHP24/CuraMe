@@ -1,27 +1,29 @@
-import { DatabaseConnection } from '../database/db';
+import { Request, Response } from 'express';
+import { ReqExtUserI } from '../interfaces/req-extends.interface';
+import { DatabaseConnection } from '../models/database/db';
 import bcryptjs from 'bcryptjs';
-
 import { insertRoles, selectRoles, deleteRoles, updateRoles, role } from '../utils/utils.module.';
 
-export const adminUsers = async ({ user }: any, res: any) => {
+export const adminUsers = async ({ user }: ReqExtUserI, res: Response) => {
     const users = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario', []);
     return res.render('admin-users', { reqUser: user, users });
 }
 
-export const addUser = async (_: any, res: any) => {
+export const addUser = async (_: Request, res: Response) => {
     const skills = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM especialidad', []);
     const centers = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM sucursal', []);
     res.render('admin-users-data', { skills, centers, msgType: '', msg: '' });
 }
 
-export const createUser = async ({ body }: any, res: any) => {
+export const createUser = async ({ body }: any, res: Response) => {
     const skills = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM especialidad', []);
     const centers = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM sucursal', []);
 
     try {
         const {
             rut, name, lastname, address,
-            phone, role, center, skill, mail, password
+            phone, role, center, skill, mail, 
+            password
         } = body;
 
         const passwordHash = await bcryptjs.hash(password, 8);
@@ -47,13 +49,13 @@ export const createUser = async ({ body }: any, res: any) => {
     }
 }
 
-export const deleteUser = async ({ params }: any, res: any) => {
+export const deleteUser = async ({ params }: Request, res: Response) => {
     const { rut } = params;
     DatabaseConnection.getInstance().doQuery('UPDATE usuario SET activo = ? WHERE rut = ?', [0, +rut]);
     res.redirect('/admin/users');
 }
 
-export const updateMenu = async ({ params }: any, res: any) => {
+export const updateMenu = async ({ params }: Request, res: Response) => {
     const { rut } = params;
     // Data from db
     const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE rut = ?', [rut]);
@@ -74,10 +76,19 @@ export const updateMenu = async ({ params }: any, res: any) => {
     if (nombre_especialidad !== undefined) {
         especialidad = nombre_especialidad
     }
-    return res.render('admin-users-edit', { userData, skills, centers, roleData, role: role[rol], sucursal, especialidad });
+    return res.render('admin-users-edit', 
+    { 
+        userData, 
+        skills, 
+        centers, 
+        roleData, 
+        role: role[rol], 
+        sucursal, 
+        especialidad
+    });
 }
 
-export const updateUser = async (req: any, res: any) => {
+export const updateUser = async (req: Request, res: Response) => {
     const { rut } = req.params;
     const { name, lastname, address, phone, mail, role:_role, center, skill } = req.body
     const role = Number(_role);
