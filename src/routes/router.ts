@@ -2,7 +2,9 @@ import express, { Response } from 'express';
 import { register, login, logout, isAuthenticated } from '../views/auth';
 import { addUser, adminUsers, createUser, deleteUser, updateMenu, updateUser } from '../views/admin-users';
 import { profile } from '../views/users';
+
 export const router = express.Router();
+
 router.get('/', (_, res: Response) => res.render('index'));
 router.get('/login', (_, res: Response) => res.render('login', {msg: ''}));
 router.post('/login', login);
