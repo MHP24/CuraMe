@@ -36,7 +36,7 @@ export class DatabaseConnection {
         });
     }
 
-    public doQuery(_query: string, params: any): void {
+    public doQuery(_query: string, params: any) {
         this.connection.query(_query, params, (error: any, results: any) => {
             if(error) throw error;
             return results;

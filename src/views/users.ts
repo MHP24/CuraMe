@@ -1,5 +1,4 @@
 import { Response } from 'express';
-// import { ReqExtUserI } from '../interfaces/req-extends.interface';
 import { TemplateI } from '../interfaces/role-template.interface';
 
 const templateByRole: TemplateI = {

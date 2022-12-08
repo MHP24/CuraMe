@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-// import { ReqExtUserI } from '../interfaces/req-extends.interface';
 import { DatabaseConnection } from '../models/database/db';
 import bcryptjs from 'bcryptjs';
 import { insertRoles, selectRoles, deleteRoles, updateRoles, role } from '../utils/utils.module.';
