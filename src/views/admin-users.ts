@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
-import { ReqExtUserI } from '../interfaces/req-extends.interface';
+// import { ReqExtUserI } from '../interfaces/req-extends.interface';
 import { DatabaseConnection } from '../models/database/db';
 import bcryptjs from 'bcryptjs';
 import { insertRoles, selectRoles, deleteRoles, updateRoles, role } from '../utils/utils.module.';
 
-export const adminUsers = async ({ user }: ReqExtUserI, res: Response) => {
+//Renders & forms
+
+export const adminUsers = async ({ user }: any, res: Response) => {
     const users = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario', []);
     return res.render('admin-users', { reqUser: user, users });
 }
@@ -15,7 +17,42 @@ export const addUser = async (_: Request, res: Response) => {
     res.render('admin-users-data', { skills, centers, msgType: '', msg: '' });
 }
 
-export const createUser = async ({ body }: any, res: Response) => {
+export const updateMenu = async ({ params }: Request, res: Response) => {
+    const { rut } = params;
+    // Data from db
+    const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE rut = ?', [rut]);
+    const { rol } = userData[0];
+    const skills = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM especialidad', []);
+    const centers = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM sucursal', []);
+    const roleData = await DatabaseConnection.getInstance().executeQuery(selectRoles[rol], rut);
+    const { direccion, nombre_especialidad } = roleData[0];
+
+    // Label manipulation
+    let sucursal = 'Sin sucursal';
+    let especialidad = 'Sin especialidad';
+
+    if (direccion !== undefined) {
+        sucursal = direccion;
+    }
+
+    if (nombre_especialidad !== undefined) {
+        especialidad = nombre_especialidad;
+    }
+    return res.render('admin-users-edit', 
+    { 
+        userData, 
+        skills, 
+        centers, 
+        roleData, 
+        role: role[rol], 
+        sucursal, 
+        especialidad
+    });
+}
+
+//  CRUD Methods
+
+export const createUser = async ({ body }: Request, res: Response) => {
     const skills = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM especialidad', []);
     const centers = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM sucursal', []);
 
@@ -55,42 +92,9 @@ export const deleteUser = async ({ params }: Request, res: Response) => {
     res.redirect('/admin/users');
 }
 
-export const updateMenu = async ({ params }: Request, res: Response) => {
-    const { rut } = params;
-    // Data from db
-    const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE rut = ?', [rut]);
-    const { rol } = userData[0];
-    const skills = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM especialidad', []);
-    const centers = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM sucursal', []);
-    const roleData = await DatabaseConnection.getInstance().executeQuery(selectRoles[rol], rut);
-    const { direccion, nombre_especialidad } = roleData[0];
-
-    // Label manipulation
-    let sucursal = 'Sin sucursal';
-    let especialidad = 'Sin especialidad';
-
-    if (direccion !== undefined) {
-        sucursal = direccion;
-    }
-
-    if (nombre_especialidad !== undefined) {
-        especialidad = nombre_especialidad
-    }
-    return res.render('admin-users-edit', 
-    { 
-        userData, 
-        skills, 
-        centers, 
-        roleData, 
-        role: role[rol], 
-        sucursal, 
-        especialidad
-    });
-}
-
 export const updateUser = async (req: Request, res: Response) => {
     const { rut } = req.params;
-    const { name, lastname, address, phone, mail, role:_role, center, skill } = req.body
+    const { name, lastname, address, phone, mail, role:_role, center, skill } = req.body;
     const role = Number(_role);
     const oldData = await DatabaseConnection.getInstance().executeQuery('SELECT rol, rut FROM usuario WHERE rut = ?', [rut]);
     const { rol: oldRole } = oldData[0];

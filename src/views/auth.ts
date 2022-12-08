@@ -1,8 +1,9 @@
+import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
 import { DatabaseConnection } from '../models/database/db';
 
-export const register = async ({ body }: any, res: any) => {
+export const register = async ({ body }: Request, res: Response) => {
     const { rut, name, lastname, phone, address, mail, password } = body;
     const passwordHash = await bcryptjs.hash(password, 8);
     try {
@@ -18,7 +19,7 @@ export const register = async ({ body }: any, res: any) => {
     res.redirect('/login');
 }
 
-export const login = async ({ body }: any, res: any) => {
+export const login = async ({ body }: Request, res: Response) => {
     try {
         const { mail, password } = body;
         if(!mail || !password) {
@@ -40,7 +41,7 @@ export const login = async ({ body }: any, res: any) => {
         });
     
         const cookieOptions = {
-            expires: new Date(Date.now()+90 * 24 * 60 * 60 * 1000),
+            expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
             httpOnly: true
         };
         res.cookie('jwt', token, cookieOptions);
@@ -55,8 +56,7 @@ export const login = async ({ body }: any, res: any) => {
     }
 }
 
-export const isAuthenticated = async (req: any, res: any, next: any) => {
-
+export const isAuthenticated = async (req: any, res: Response, next: NextFunction) => {
     if(!req.cookies.jwt) {
         return res.redirect('/login');
     }
@@ -78,7 +78,7 @@ export const isAuthenticated = async (req: any, res: any, next: any) => {
     }
 }
 
-export const logout = (_: any, res: any) => {
+export const logout = (_: Request, res: Response) => {
     res.clearCookie('jwt');
     return res.redirect('/');
 }
