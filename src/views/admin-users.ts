@@ -19,7 +19,7 @@ export const addUser = async (_: Request, res: Response) => {
 export const updateMenu = async ({ params }: Request, res: Response) => {
     const { rut } = params;
     // Data from db
-    const userData = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM usuario WHERE rut = ?', [rut]);
+    const userData = await DatabaseConnection.getInstance().executeQuery(selectRoles[2] as string, [rut]);
     const { rol } = userData[0];
     const skills = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM especialidad', []);
     const centers = await DatabaseConnection.getInstance().executeQuery('SELECT * FROM sucursal', []);
@@ -63,7 +63,7 @@ export const createUser = async ({ body }: Request, res: Response) => {
         } = body;
 
         const passwordHash = await bcryptjs.hash(password, 8);
-        DatabaseConnection.getInstance().doQuery('INSERT INTO usuario VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        DatabaseConnection.getInstance().doQuery(insertRoles[1] as string, [
             +rut, role, name, lastname, +phone, mail, passwordHash, address, +center, 1]);
 
         let params: String[] = [center, rut];
@@ -99,7 +99,7 @@ export const updateUser = async (req: Request, res: Response) => {
     const { rol: oldRole } = oldData[0];
 
     // Update user table data
-    DatabaseConnection.getInstance().doQuery('UPDATE usuario SET nombre = ?, apellido = ?, telefono = ?, email = ?, direccion = ?, rol = ? WHERE rut = ?', 
+    DatabaseConnection.getInstance().doQuery(updateRoles[1] as string, 
     [name, lastname, Number(phone), mail, address, Number(role), rut]);
 
     // Update role data
