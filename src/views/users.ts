@@ -8,7 +8,7 @@ const templateByRole: TemplateI = {
 
 export const profile = ({ user }: any, res: Response) => {
     const { rol: role } = user[0];
-    const template: string = templateByRole[role];
+    const template: string | undefined = templateByRole[role];
     if(template !== undefined) {
         return res.render(template, {userData: user[0]});
     }
